@@ -9,6 +9,9 @@ global {
     # iptables tproxy rules.
     tproxy_port_protect: true
 
+    # Set non-zero value to enable pprof.
+    pprof_port: 0
+
     # If not zero, traffic sent from dae will be set SO_MARK. It is useful to avoid traffic loop with iptables tproxy
     # rules.
     so_mark_from_dae: 0
@@ -19,6 +22,8 @@ global {
     # Disable waiting for network before pulling subscriptions.
     disable_waiting_network: false
 
+    # Enable fast redirect for local TCP connections. There is a known kernel issue that breaks certain clients/proxies, such as nadoo/glider. Users may enable this experimental option at their own risks.
+    enable_local_tcp_fast_redirect: false
 
     ##### Interface and kernel options.
 
